@@ -20,16 +20,27 @@ class Pessoa {
 
     }
 
-    classificaImc(){
-        
+    classificaImc() {
+        const imc = this.calcularImc();
+        if (imc < 18.5) {
+            return ('Abaixo do peso');
+        } else if (imc >= 18.5 && imc < 25) {
+            return ("Peso normal");
+        } else if (imc >= 25 && imc < 30) {
+            return ("Acima do peso");
+        } else if (imc >= 30 && imc < 40) {
+            return ("Obeso");
+        } else {
+            return ("Obsesidade Grave");
+        }
     }
 }
 
 const paulo = new Pessoa('Paulo', 60, 1.75);
-console.log(paulo.calcularImc());
+console.log(paulo.classificaImc());
 
 const deyvid = new Pessoa('Deyvid', 70, 1.80);
-console.log(deyvid.calcularImc());
+console.log(deyvid.classificaImc());
 
 const jose = new Pessoa('jose', 90, 1.80);
-console.log(jose.calcularImc());
+console.log(jose.classificaImc());
